@@ -1,0 +1,75 @@
+#1330번
+A,B = map(int, input().split(" "))
+if A > B:
+    print(">")
+elif A < B:
+    print("<")
+else:
+    print("==")
+    
+#9498번
+score = int(input())
+if 90<=score<=100:
+    print("A")
+elif 80<=score<90:
+    print("B")
+elif 70<=score<80:
+    print("C")
+elif 60<=score<70:
+    print("D")
+else:
+    print("F")
+
+#2753번 -> python :: 비트 연산자(&,|), 논리연산자(and, or)
+y = int(input()) 
+if (y%4==0 and y%100!=0) or (y%400==0):
+    print(1)
+else:
+    print(0)
+
+#14681번
+x = int(input())
+y = int(input())
+if x > 0 and y > 0:
+    print("1")
+elif x<0 and y>0:
+    print("2")
+elif x<0 and y<0:
+    print("3")
+else:
+    print("4")
+
+#2884번
+h, m = map(int, input().split())
+if m >= 45:
+    print(h-1, m-45)
+else:
+    if h == 0:
+        print(23, m+60-45)   #시에서 -1 했음으로 분에 +60하고 -45를 한다
+    else: 
+        print(h-1, m+60-45)
+
+#2525번
+a, b = map(int, input().split(" "))
+c = int(input())
+if b+c < 60:
+    print(a, b+c)
+elif b+c >= 60:
+    if a+(b+c)//60 >= 24:
+        print(a+(b+c)//60 - 24, (b+c)%60)
+    else:
+        print(a+(b+c)//60, (b+c)%60)
+        
+#2480번
+dice = list(map(int, input().split()))
+if dice[0] == dice[1] == dice[2]:
+    print(10000 + 1000*dice[0])
+elif dice[0] == dice[1]:
+    print(1000 + 100*dice[1])
+elif dice[1] == dice[2]:
+    print(1000+100*dice[1])
+elif dice[0] == dice[2]:
+    print(1000+100*dice[2])
+else:
+    print(max(dice)*100)
+
